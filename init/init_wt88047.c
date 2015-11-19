@@ -197,7 +197,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     UNUSED(msm_ver);
     UNUSED(board_type);
 
-    rc = property_get("ro.cm.device", device);
+    rc = property_get("ro.razor.device", device);
     if (!rc || !ISMATCH(device, "wt88047"))
         return;
 
