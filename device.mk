@@ -99,7 +99,6 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    IMSEnabler \
     init.qti.ims.sh \
     ims \
     imscmlibrary
