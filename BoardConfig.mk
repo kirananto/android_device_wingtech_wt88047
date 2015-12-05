@@ -32,6 +32,9 @@ TARGET_KERNEL_SOURCE := kernel/cyanogen/msm8916
 TARGET_KERNEL_CONFIG := cyanogenmod_wt88047_defconfig
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
+# Set vold to use native exfat driver
+TARGET_KERNEL_HAVE_EXFAT := true
+
 # CPU
 TARGET_CPU_CORTEX_A53 := true
 
@@ -86,6 +89,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 5939100672
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_USERIMAGES_USE_F2FS := true
 
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
