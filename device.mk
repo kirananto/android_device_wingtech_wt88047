@@ -54,12 +54,13 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8916 \
-    libmm-qcamera
+   libmm-qcamera \
+      SnapdragonCamera
 
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.io.scheduler=bfq \
-    ro.min_freq_0=400000
+    ro.min_freq_0=200000
 
 # Enable ART small mode
 PRODUCT_PROPERTY_OVERRIDES += \
