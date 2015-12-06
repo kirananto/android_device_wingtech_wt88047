@@ -143,6 +143,7 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.target.power.rc \
     init.qcom.usb.rc \
+    set_baseband.sh \
     memcheck
 
 # Sensor HAL

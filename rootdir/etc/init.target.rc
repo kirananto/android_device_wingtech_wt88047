@@ -89,6 +89,11 @@ on property:service.bootanim.exit=1
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 100
 
+service set_baseband /system/bin/sh /system/etc/set_baseband.sh
+    class late_start
+    user root
+    oneshot
+
 service cnd /system/bin/cnd
     class late_start
     socket cnd stream 660 root inet
