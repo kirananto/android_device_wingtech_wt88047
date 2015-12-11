@@ -32,6 +32,10 @@ on boot
     chown system camera /sys/class/leds/torch-light/brightness
     chmod 0660 /sys/class/leds/torch-light/brightness
 
+     # Touchscreen
+    chown root system /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0040/gesture
+    chmod 0660 /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0040/gesture
+
     # LEDs
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/red/led_time
