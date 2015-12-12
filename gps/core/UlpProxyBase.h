@@ -31,8 +31,25 @@
 
 #include <gps_extended.h>
 
-struct FlpExtLocation_s;
-struct FlpExtBatchOptions;
+typedef struct {
+    double max_power_allocation_mW;
+    uint32_t sources_to_use;
+    uint32_t flags;
+    int64_t period_ns;
+} FlpExtBatchOptions;
+
+typedef struct FlpExtLocation_s {
+    size_t          size;
+    uint16_t        flags;
+    double          latitude;
+    double          longitude;
+    double          altitude;
+    float           speed;
+    float           bearing;
+    float           accuracy;
+    int64_t         timestamp;
+    uint32_t        sources_used;
+} FlpExtLocation;
 
 namespace loc_core {
 
@@ -75,7 +92,7 @@ public:
                                               bool active) {
         return false;
     }
-    inline virtual bool reportPositions(const struct FlpExtLocation_s* locations,
+    inline virtual bool reportPositions(const FlpExtLocation* locations,
                                         int32_t number_of_locations) {
         return false;
     }
