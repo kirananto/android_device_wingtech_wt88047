@@ -22,6 +22,7 @@
 #include <cutils/log.h>
 
 #include <stdint.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <errno.h>
@@ -305,6 +306,7 @@ set_speaker_light_locked(struct light_device_t* dev,
 
     switch (state->flashMode) {
         case LIGHT_FLASH_TIMED:
+        case LIGHT_FLASH_HARDWARE:
             onMS = state->flashOnMS;
             offMS = state->flashOffMS;
             break;
@@ -315,7 +317,8 @@ set_speaker_light_locked(struct light_device_t* dev,
             break;
     }
 
-    colorRGB = state->color;
+    // state->color is an ARGB value, clear the alpha channel
+    colorRGB = (0xFFFFFF & state->color);
 
     ALOGD("set_speaker_light_locked mode %d, colorRGB=%08X, onMS=%d, offMS=%d\n",
             state->flashMode, colorRGB, onMS, offMS);
