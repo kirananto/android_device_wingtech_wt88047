@@ -61,6 +61,9 @@ PRODUCT_PACKAGES += \
    libmm-qcamera \
       SnapdragonCamera
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
+
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.io.scheduler=bfq \
@@ -88,7 +91,11 @@ PRODUCT_PACKAGES += \
 
 # CNE and DPM symbol
 PRODUCT_PACKAGES += \
-    librendang
+    libshim_parcel
+
+# Widevine DRM symbol, boringssl-compat subset
+PRODUCT_PACKAGES += \
+    libshim_openinit
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
