@@ -19,6 +19,10 @@ $(call inherit-product-if-exists, vendor/wingtech/wt88047/wt88047-vendor.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
@@ -57,6 +61,9 @@ PRODUCT_PACKAGES += \
    libmm-qcamera \
       SnapdragonCamera
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
+
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.io.scheduler=bfq \
@@ -84,7 +91,11 @@ PRODUCT_PACKAGES += \
 
 # CNE and DPM symbol
 PRODUCT_PACKAGES += \
-    librendang
+    libshim_parcel
+
+# Widevine DRM symbol, boringssl-compat subset
+PRODUCT_PACKAGES += \
+    libshim_openinit
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
