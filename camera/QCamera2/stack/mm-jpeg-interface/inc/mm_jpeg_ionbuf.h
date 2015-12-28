@@ -93,4 +93,3 @@ int buffer_deallocate(buffer_t *p_buffer);
 int buffer_invalidate(buffer_t *p_buffer);
 
 #endif
-
