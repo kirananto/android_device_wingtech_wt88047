@@ -54,7 +54,8 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8916 \
-    libmm-qcamera
+    libmm-qcamera \
+      SnapdragonCamera
 
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
