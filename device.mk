@@ -59,7 +59,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8916 \
     libmm-qcamera \
-      SnapdragonCamera
+    Snap
 
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
